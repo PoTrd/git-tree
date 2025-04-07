@@ -1,0 +1,1 @@
+git config --global alias.tree '!f() { dir="${1:-.}"; exclude="${@:2}"; find "$dir" $(for x in $exclude; do echo -path "$dir/$x" -prune -o; done) -print | sed -e "s;[^/]*/;|____;g;s;____|; |;g"; }; f'
